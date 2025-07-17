@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWD Dashboard - Able Connect</title>
+  <link rel="stylesheet" href="/css/home.css" />
+  <script src="/js/home.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-title">
+      <img src="/images/logo.png" alt="Able Connect Logo" class="logo" />
+      <h1 class="platform-name">Able Connect</h1>
+    </div>
+    <nav class="nav">
+      <a href="#gigs">Gigs</a>
+      <a href="#services">Services</a>
+      <a href="#profile">Profile</a>
+    </nav>
+    <div class="auth-buttons">
+      <span id="profileIcon">👤</span>
+    </div>
+  </header>
+
+  <div id="profilePopup" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="profilePopup.style.display='none'">×</span>
+      <h2>User Profile</h2>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Email:</strong> john@example.com</p>
+      <p><strong>Disability:</strong> Hearing Impairment</p>
+      <p><strong>Phone:</strong> +254712345678</p>
+      <p><strong>Skills:</strong> Web Design, Content Writing</p>
+      <button id="editProfileBtn">Edit Profile</button>
+      <button id="viewHistoryBtn">View Bid History</button>
+    </div>
+  </div>
+
+  <div id="editProfileModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="editProfileModal.style.display='none'">×</span>
+      <h2>Edit Profile</h2>
+      <form>
+        <input type="text" placeholder="Name" value="John Doe" required />
+        <input type="email" placeholder="Email" value="john@example.com" required />
+        <select required>
+          <option value="Hearing Impairment" selected>Hearing Impairment</option>
+          <option>Vision</option>
+          <option>Mobility</option>
+          <option>Cognitive</option>
+          <option>Other</option>
+        </select>
+        <input type="tel" placeholder="Phone Number" value="+254712345678" required />
+        <div class="skills-list">
+          <span class="skill">Web Design <button class="remove-skill">x</button></span>
+        </div>
+        <select id="addSkillDropdown">
+          <option value="" selected>Add a skill</option>
+          <option>UI/UX</option>
+          <option>Python</option>
+          <option>Transcription</option>
+        </select>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="bidModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="bidModal.style.display='none'">×</span>
+      <h2>Submit Your Bid</h2>
+      <form>
+        <input type="number" placeholder="Bid Amount (KES)" required />
+        <textarea placeholder="Your Proposal" required></textarea>
+        <input type="file" accept=".pdf,.jpeg,.jpg,.png" />
+        <button type="submit" id="submitBidBtn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="bookModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="bookModal.style.display='none'">×</span>
+      <h2>Book a Service</h2>
+      <form>
+        <textarea placeholder="Your Proposal" required></textarea>
+        <input type="file" accept=".pdf,.jpeg,.jpg,.png" />
+        <button type="submit" id="submitBookBtn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <section id="gigs">
+    <h2>Available Gigs</h2>
+    <div id="gigsGrid" class="grid-container"></div>
+  </section>
+
+  <section id="services">
+    <h2>Available Services</h2>
+    <div id="servicesGrid" class="grid-container"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Able Connect. Empowering All Abilities.</p>
+  </footer>
+</body>
+</html>

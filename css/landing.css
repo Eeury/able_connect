@@ -1,0 +1,308 @@
+/* Reset & base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+  background-color: #001F1F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.platform-name {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-buttons button {
+  background-color: #00450d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.auth-buttons button:hover {
+  background-color: #003308;
+}
+
+/* Hero */
+#hero {
+  background: url('/images/hero.jpg') no-repeat center center/cover;
+  height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero-content {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
+}
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#hero p {
+  font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+  background-color: #002D2D;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Services Section */
+#services {
+  padding: 60px 20px;
+  text-align: center;
+}
+#services ul {
+  list-style-type: none;
+  padding: 0;
+}
+#services li {
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #001F1F;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+/* Auth Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 90vw;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 31, 31, 0.2);
+  position: relative;
+}
+.slider-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background: #e0f7f7;
+  border-radius: 24px;
+  padding: 0.25rem;
+  border: 1px solid #00450d;
+}
+.slider-switch button {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.slider-switch button.active {
+  background: #00450d;
+  color: white;
+}
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.close:hover {
+  color: #00450d;
+}
+
+/* Auth form styles */
+.modal-content form input,
+.modal-content form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  border: 1px solid #00450d;
+  border-radius: 12px;
+  background: #f8f8f8;
+  outline: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.modal-content form input::placeholder {
+  color: #888;
+}
+.modal-content form select {
+  color: #333;
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%2300450d" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.75rem center;
+}
+.modal-content form select option {
+  color: #333;
+}
+.modal-content form button {
+  background-color: #00450d;
+  color: white;
+  padding: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.modal-content form button:hover {
+  background-color: #003308;
+}
+.modal-content form a {
+  color: #00450d;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+.modal-content form a:hover {
+  color: #003308;
+}
+
+/* Radio Options */
+.radio-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.75rem 0;
+}
+.radio-options label {
+  background-color: #f0f0f0;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid #00450d;
+  flex: 1;
+  text-align: center;
+  margin: 0 0.4rem;
+  font-size: 0.9rem;
+}
+.radio-options input[type="radio"] {
+  display: none;
+}
+.radio-options input[type="radio"]:checked + label {
+  background-color: #e0f7f7;
+  border-color: #003308;
+}
+
+/* Password Requirements Checklist */
+.password-requirements {
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+.password-requirements ul {
+  list-style: none;
+  padding: 0;
+}
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+.password-requirements li.valid::before {
+  content: '✔';
+  color: #00450d;
+  margin-right: 0.5rem;
+}
+.password-requirements li.invalid::before {
+  content: '✘';
+  color: #888;
+  margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 85vw;
+    max-width: 320px;
+    padding: 1rem;
+  }
+  .modal-content form input,
+  .modal-content form select {
+    padding: 0.6rem 0.8rem;
+    margin: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+  .modal-content form button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .slider-switch {
+    margin-bottom: 0.8rem;
+  }
+  .slider-switch button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .radio-options label {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    margin: 0 0.3rem;
+  }
+  .password-requirements {
+    font-size: 0.8rem;
+  }
+}

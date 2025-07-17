@@ -1,0 +1,310 @@
+/* Reset & base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+  background-color: #001F1F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.platform-name {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-buttons button, .auth-buttons span {
+  background-color: #00450d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.auth-buttons button:hover, .auth-buttons span:hover {
+  background-color: #003308;
+}
+
+/* Grid Sections */
+#gigs, #services, #postGigService, #postedItems {
+  padding: 60px 20px;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.gig-card, .service-card {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  min-width: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+.gig-card h3, .service-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+.gig-card p, .service-card p {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+.bid-btn, .book-btn, .edit-btn, .view-profile-btn, .chat-btn {
+  background-color: #00450d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.bid-btn:hover, .book-btn:hover, .edit-btn:hover, .view-profile-btn:hover, .chat-btn:hover {
+  background-color: #003308;
+}
+
+/* Post Form Styling */
+#postGigService form {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 31, 31, 0.1);
+}
+#postGigService input,
+#postGigService textarea,
+#postGigService .radio-options {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #00450d;
+  border-radius: 12px;
+  background: #f8f8f8;
+  outline: none;
+  font-size: 1rem;
+}
+#postGigService textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+#postGigService input::placeholder,
+#postGigService textarea::placeholder {
+  color: #888;
+}
+#postGigService button {
+  background-color: #00450d;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+#postGigService button:hover {
+  background-color: #003308;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90vw;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 31, 31, 0.3);
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+.close:hover {
+  color: #00450d;
+}
+.modal-content form input,
+.modal-content form select,
+.modal-content form textarea {
+  width: 100%;
+  padding: 10px 8px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #00450d;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+}
+.modal-content form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.modal-content form input::placeholder,
+.modal-content form textarea::placeholder {
+  color: #888;
+}
+.modal-content form button {
+  background-color: #00450d;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.modal-content form button:hover {
+  background-color: #003308;
+}
+
+/* Profile Popup */
+#profilePopup .modal-content, #dashboardPopup .modal-content {
+  text-align: left;
+}
+#profilePopup p, #dashboardPopup p {
+  margin: 10px 0;
+}
+#profilePopup button, #dashboardPopup button {
+  background-color: #00450d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#profilePopup button:hover, #dashboardPopup button:hover {
+  background-color: #003308;
+}
+
+/* Skills Management */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+.skill {
+  background: #e0f7f7;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.remove-skill {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.remove-skill:hover {
+  color: #00450d;
+}
+
+/* Activity Section */
+.activity-item {
+  margin: 10px 0;
+}
+.activity-item ul {
+  list-style: none;
+  padding: 0;
+}
+.activity-item li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 85vw;
+    max-width: 320px;
+    padding: 20px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  #postGigService form {
+    padding: 15px;
+    max-width: 300px;
+  }
+}
+/* Radio Options */
+.radio-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.75rem 0;
+}
+.radio-options label {
+  background-color: #f0f0f0;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid #00450d;
+  flex: 1;
+  text-align: center;
+  margin: 0 0.4rem;
+  font-size: 0.9rem;
+}
+.radio-options input[type="radio"] {
+  display: none;
+}
+.radio-options input[type="radio"]:checked + label {
+  background-color: #e0f7f7;
+  border-color: #003308;
+}

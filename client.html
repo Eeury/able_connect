@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard - Able Connect</title>
+  <link rel="stylesheet" href="/css/home.css" />
+  <script src="/js/client.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-title" style="flex: 1; justify-content: center;">
+      <img src="/images/logo.png" alt="Able Connect Logo" class="logo" />
+      <h1 class="platform-name">Able Connect</h1>
+    </div>
+    <div class="auth-buttons">
+      <span id="dashboardIcon">☰</span>
+    </div>
+  </header>
+
+  <div id="dashboardPopup" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="dashboardPopup.style.display='none'">×</span>
+      <h2>Dashboard</h2>
+      <div id="profileSection">
+        <h3>Profile</h3>
+        <p><strong>Email:</strong> client@example.com</p>
+        <p><strong>Phone:</strong> +254712345679</p>
+       
+
+System: <p><strong>Registration Type:</strong> Freelance Gigs</p>
+        <button id="editProfileBtn">Edit Profile</button>
+      </div>
+      <div id="historySection">
+        <h3>History</h3>
+        <p><strong>Posts:</strong> <span id="postCount">0</span></p>
+        <p><strong>Views:</strong> <span id="viewCount">0</span></p>
+        <p><strong>Bids/Bookings:</strong> <span id="bidCount">0</span></p>
+      </div>
+      <div id="activitySection">
+        <h3>Activity</h3>
+        <div id="activityList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="editProfileModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="editProfileModal.style.display='none'">×</span>
+      <h2>Edit Profile</h2>
+      <form>
+        <input type="email" placeholder="Email" value="client@example.com" required />
+        <input type="tel" placeholder="Phone Number" value="+254712345679" required />
+        <div class="radio-options">
+          <label><input type="radio" name="role" value="freelance" checked> Freelance Gigs</label>
+          <label><input type="radio" name="role" value="medical"> Medical Services</label>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="userProfileModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="userProfileModal.style.display='none'">×</span>
+      <h2>PWD User Profile</h2>
+      <div id="userProfileContent"></div>
+    </div>
+  </div>
+
+  <div id="chatModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="chatModal.style.display='none'">×</span>
+      <h2>Chat with PWD User</h2>
+      <div id="chatContent">Chat interface (mocked)</div>
+      <textarea placeholder="Type your message..." style="margin-top: 10px;"></textarea>
+      <button onclick="alert('Message sent (mocked)!')">Send</button>
+    </div>
+  </div>
+
+  <section id="postGigService">
+    <h2>Post a Gig or Service</h2>
+    <form id="postForm">
+      <input type="text" placeholder="Title" required />
+      <textarea placeholder="Description" required></textarea>
+      <input type="file" accept=".jpeg,.jpg,.png" multiple />
+      <div class="radio-options">
+        <label><input type="radio" name="type" value="gig" checked> Gig</label>
+        <label><input type="radio" name="type" value="service"> Service</label>
+      </div>
+      <button type="submit">Post</button>
+    </form>
+  </section>
+
+  <section id="postedItems">
+    <h2>Your Posted Gigs & Services</h2>
+    <div id="postedGrid" class="grid-container"></div>
+  </section>
+
+  <div id="editPostModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="editPostModal.style.display='none'">×</span>
+      <h2>Edit Post</h2>
+      <form id="editPostForm">
+        <input type="text" id="editTitle" placeholder="Title" required />
+        <textarea id="editDescription" placeholder="Description" required></textarea>
+        <input type="number" id="editPrice" placeholder="Price (KES)" required />
+        <input type="text" id="editTimeframe" placeholder="Timeframe (e.g., 1 week)" required />
+        <textarea id="editRequirements" placeholder="Requirements" required></textarea>
+        <div class="radio-options">
+          <label><input type="radio" name="status" value="open" checked> Open</label>
+          <label><input type="radio" name="status" value="closed"> Closed</label>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Able Connect. Empowering All Abilities.</p>
+  </footer>
+</body>
+</html>

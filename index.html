@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Able Connect</title>
+  <link rel="stylesheet" href="/css/landing.css" />
+  <script src="/js/landing.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-title">
+      <img src="/images/logo.png" alt="Able Connect Logo" class="logo" />
+      <h1 class="platform-name">Able Connect</h1>
+    </div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Login</button>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Connecting Persons with Disabilities to Opportunities</h2>
+      <p>Join our inclusive community bridging skills and services with impact.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Able Connect</h2>
+    <p>
+      Able Connect is a platform designed to link persons with disabilities to job
+      opportunities, professional services, and therapy providers. We believe in
+      accessibility, empowerment, and equal chances for all.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Freelance Gigs Posting & Bidding</li>
+      <li>Medical and Therapy Service Access</li>
+      <li>Inclusive Work Environments</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Able Connect. Empowering Inclusion, Together.</p>
+  </footer>
+
+  <div id="authModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <div id="formContainer"></div>
+    </div>
+  </div>
+</body>
+</html>
