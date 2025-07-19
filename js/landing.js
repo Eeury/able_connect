@@ -112,13 +112,23 @@ function showSignupForm(userType) {
 
 function showLoginForm(userType) {
   document.getElementById('formArea').innerHTML = `
-    <form>
+    <form id="loginForm">
       <input type="email" placeholder="Email" required>
       <input type="password" placeholder="Password" required>
       <a href="#">Forgot Password?</a>
       <button type="submit">Login</button>
     </form>
   `;
+  // Add JS handler to prevent reload and show alert
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.onsubmit = function(e) {
+      e.preventDefault();
+      alert('Login submitted! (mock)');
+      closeModal(modal);
+      return false;
+    };
+  }
 }
 
 function validatePassword() {
@@ -157,4 +167,9 @@ function validateForm(event) {
     alert('Please meet all password requirements.');
     return false;
   }
+}
+
+function triggerAuthModal(mode) {
+  openModal(modal);
+  renderSlider(mode, 'PWD');
 }
