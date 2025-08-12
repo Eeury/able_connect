@@ -27,29 +27,48 @@ function showForm(type) {
         <button onclick="switchForm('client')">Client</button>
       </div>
       <form id="signupForm" onsubmit="handleSignup(event)">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone Number" required />
-        <input type="password" placeholder="Password" id="password" required />
-        <div class="password-requirements">
-          <ul>
-            <li class="invalid" id="length">At least 8 characters</li>
-            <li class="invalid" id="uppercase">One uppercase letter</li>
-            <li class="invalid" id="lowercase">One lowercase letter</li>
-            <li class="invalid" id="number">One number</li>
-            <li class="invalid" id="special">One special character</li>
-          </ul>
+        <div id="pwdFields">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <input type="password" placeholder="Password" id="password" required />
+          <div class="password-requirements">
+            <ul>
+              <li class="invalid" id="length">At least 8 characters</li>
+              <li class="invalid" id="uppercase">One uppercase letter</li>
+              <li class="invalid" id="lowercase">One lowercase letter</li>
+              <li class="invalid" id="number">One number</li>
+              <li class="invalid" id="special">One special character</li>
+            </ul>
+          </div>
+          <input type="password" placeholder="Confirm Password" required />
         </div>
-        <input type="password" placeholder="Confirm Password" required />
-        <div class="radio-options" id="userTypeOptions">
-          <label><input type="radio" name="userType" value="pwd" checked> PWD</label>
-          <label><input type="radio" name="userType" value="client"> Client</label>
+        <div id="clientFields" style="display: none;">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <input type="password" placeholder="Password" id="clientPassword" required />
+          <div class="password-requirements">
+            <ul>
+              <li class="invalid" id="clientLength">At least 8 characters</li>
+              <li class="invalid" id="clientUppercase">One uppercase letter</li>
+              <li class="invalid" id="clientLowercase">One lowercase letter</li>
+              <li class="invalid" id="clientNumber">One number</li>
+              <li class="invalid" id="clientSpecial">One special character</li>
+            </ul>
+          </div>
+          <input type="password" placeholder="Confirm Password" required />
+          <div class="radio-options" id="clientTypeOptions">
+            <label><input type="radio" name="clientType" value="gig" checked> Gig</label>
+            <label><input type="radio" name="clientType" value="service"> Service</label>
+          </div>
         </div>
         <button type="submit">Sign Up</button>
         <a href="#" onclick="showForm('login')">Already have an account? Login</a>
       </form>
     `;
     setupPasswordValidation();
+    setupClientPasswordValidation();
   } else {
     formContainer.innerHTML = `
       <div class="slider-switch">
@@ -76,11 +95,22 @@ function switchForm(userType) {
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
   
-  // Update radio button selection for both signup and login forms
-  const signupRadio = document.querySelector(`input[name="userType"][value="${userType}"]`);
-  const loginRadio = document.querySelector(`input[name="loginUserType"][value="${userType}"]`);
+  // Show/hide appropriate fields for signup form
+  const pwdFields = document.getElementById('pwdFields');
+  const clientFields = document.getElementById('clientFields');
   
-  if (signupRadio) signupRadio.checked = true;
+  if (pwdFields && clientFields) {
+    if (userType === 'pwd') {
+      pwdFields.style.display = 'block';
+      clientFields.style.display = 'none';
+    } else {
+      pwdFields.style.display = 'none';
+      clientFields.style.display = 'block';
+    }
+  }
+  
+  // Update radio button selection for login form
+  const loginRadio = document.querySelector(`input[name="loginUserType"][value="${userType}"]`);
   if (loginRadio) loginRadio.checked = true;
 }
 
@@ -90,11 +120,19 @@ function handleSignup(event) {
   const form = event.target;
   const formData = new FormData(form);
   
-  // Get user type from radio selection
-  const userType = form.querySelector('input[name="userType"]:checked').value;
+  // Get user type from active slider button
+  const activeButton = document.querySelector('.slider-switch button.active');
+  const userType = activeButton ? activeButton.textContent.toLowerCase() : 'pwd';
+  
+  // Get client type if signing up as client
+  let clientType = null;
+  if (userType === 'client') {
+    const clientTypeRadio = form.querySelector('input[name="clientType"]:checked');
+    clientType = clientTypeRadio ? clientTypeRadio.value : 'gig';
+  }
   
   // Simulate signup process
-  console.log('Signing up as:', userType);
+  console.log('Signing up as:', userType, clientType ? `(${clientType})` : '');
   
   // Redirect based on user type
   setTimeout(() => {
@@ -142,6 +180,23 @@ function setupPasswordValidation() {
     document.getElementById('lowercase').className = /[a-z]/.test(value) ? 'valid' : 'invalid';
     document.getElementById('number').className = /\d/.test(value) ? 'valid' : 'invalid';
     document.getElementById('special').className = /[!@#$%^&*(),.?":{}|<>]/.test(value) ? 'valid' : 'invalid';
+  });
+}
+
+// Client password validation
+function setupClientPasswordValidation() {
+  const clientPassword = document.getElementById('clientPassword');
+  if (!clientPassword) return;
+  
+  clientPassword.addEventListener('input', function() {
+    const value = this.value;
+    
+    // Check each requirement
+    document.getElementById('clientLength').className = value.length >= 8 ? 'valid' : 'invalid';
+    document.getElementById('clientUppercase').className = /[A-Z]/.test(value) ? 'valid' : 'invalid';
+    document.getElementById('clientLowercase').className = /[a-z]/.test(value) ? 'valid' : 'invalid';
+    document.getElementById('clientNumber').className = /\d/.test(value) ? 'valid' : 'invalid';
+    document.getElementById('clientSpecial').className = /[!@#$%^&*(),.?":{}|<>]/.test(value) ? 'valid' : 'invalid';
   });
 }
 
