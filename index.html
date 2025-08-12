@@ -72,16 +72,25 @@
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-grid">
-      <div class="service-item">
-        <h3>🎯 Freelance Gigs</h3>
+      <div class="service-item" onclick="showServiceDescription('freelance')">
+        <div class="service-image-placeholder">
+          <span>🎯</span>
+        </div>
+        <h3>Freelance Gigs</h3>
         <p>Post and bid on freelance opportunities tailored to your skills</p>
       </div>
-      <div class="service-item">
-        <h3>🏥 Medical Services</h3>
+      <div class="service-item" onclick="showServiceDescription('medical')">
+        <div class="service-image-placeholder">
+          <span>🏥</span>
+        </div>
+        <h3>Medical Services</h3>
         <p>Access to medical and therapy services in your area</p>
       </div>
-      <div class="service-item">
-        <h3>💼 Inclusive Work</h3>
+      <div class="service-item" onclick="showServiceDescription('inclusive')">
+        <div class="service-image-placeholder">
+          <span>💼</span>
+        </div>
+        <h3>Inclusive Work</h3>
         <p>Connect with employers committed to inclusive work environments</p>
       </div>
     </div>
@@ -95,6 +104,13 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">×</span>
       <div id="formContainer"></div>
+    </div>
+  </div>
+
+  <div id="serviceModal" class="modal" style="display: none;">
+    <div class="modal-content service-modal">
+      <span class="close" onclick="closeServiceModal()">×</span>
+      <div id="serviceDescription"></div>
     </div>
   </div>
 </body>

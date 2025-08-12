@@ -206,6 +206,88 @@ body, html {
   line-height: 1.6;
 }
 
+.service-image-placeholder {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-radius: 12px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 3rem;
+  border: 2px dashed #ccc;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover .service-image-placeholder {
+  transform: scale(1.05);
+  border-color: #00450d;
+  background: linear-gradient(135deg, #e0f7f7 0%, #d0f0f0 100%);
+}
+
+/* Service Modal Styling */
+.service-modal {
+  max-width: 600px;
+  text-align: left;
+}
+
+.service-modal h2 {
+  color: #001F1F;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.service-modal .service-image {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-radius: 12px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 4rem;
+  border: 2px dashed #ccc;
+}
+
+.service-modal p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-modal .service-features {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.service-modal .service-features h4 {
+  color: #001F1F;
+  margin-bottom: 0.5rem;
+}
+
+.service-modal .service-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-modal .service-features li {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.service-modal .service-features li::before {
+  content: '✓';
+  color: #00450d;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
 /* Footer */
 footer {
   background-color: #001F1F;
@@ -528,6 +610,12 @@ footer {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .service-image-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
   }
 }
 

@@ -225,6 +225,106 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+// Service description functionality
+function showServiceDescription(serviceType) {
+  const serviceModal = document.getElementById('serviceModal');
+  const serviceDescription = document.getElementById('serviceDescription');
+  
+  let content = '';
+  
+  switch(serviceType) {
+    case 'freelance':
+      content = `
+        <h2>🎯 Freelance Gigs</h2>
+        <div class="service-image">
+          <span>🎯</span>
+        </div>
+        <p>Connect with opportunities that match your unique skills and abilities. Our freelance platform is designed to be accessible and inclusive for everyone.</p>
+        <div class="service-features">
+          <h4>What we offer:</h4>
+          <ul>
+            <li>Skill-based project matching</li>
+            <li>Flexible work schedules</li>
+            <li>Accessible project descriptions</li>
+            <li>Inclusive client community</li>
+            <li>Fair compensation standards</li>
+            <li>24/7 support assistance</li>
+          </ul>
+        </div>
+        <p>Whether you're a graphic designer, writer, programmer, or offer any other service, find projects that value your expertise and accommodate your needs.</p>
+      `;
+      break;
+      
+    case 'medical':
+      content = `
+        <h2>🏥 Medical Services</h2>
+        <div class="service-image">
+          <span>🏥</span>
+        </div>
+        <p>Access comprehensive medical and therapy services through our network of healthcare providers who understand and accommodate diverse abilities.</p>
+        <div class="service-features">
+          <h4>Available services:</h4>
+          <ul>
+            <li>Primary care consultations</li>
+            <li>Specialized therapy sessions</li>
+            <li>Mental health support</li>
+            <li>Physical therapy</li>
+            <li>Occupational therapy</li>
+            <li>Accessible medical facilities</li>
+          </ul>
+        </div>
+        <p>All our healthcare partners are trained in accessibility and provide accommodations to ensure comfortable and effective care for everyone.</p>
+      `;
+      break;
+      
+    case 'inclusive':
+      content = `
+        <h2>💼 Inclusive Work</h2>
+        <div class="service-image">
+          <span>💼</span>
+        </div>
+        <p>Connect with employers who are committed to creating truly inclusive work environments that celebrate diversity and provide necessary accommodations.</p>
+        <div class="service-features">
+          <h4>Workplace features:</h4>
+          <ul>
+            <li>Accessible office environments</li>
+            <li>Flexible work arrangements</li>
+            <li>Inclusive hiring practices</li>
+            <li>Diversity training programs</li>
+            <li>Accommodation support</li>
+            <li>Equal opportunity policies</li>
+          </ul>
+        </div>
+        <p>Find employers who value your skills and are committed to creating workplaces where everyone can thrive and succeed.</p>
+      `;
+      break;
+  }
+  
+  serviceDescription.innerHTML = content;
+  serviceModal.style.display = 'flex';
+}
+
+function closeServiceModal() {
+  const serviceModal = document.getElementById('serviceModal');
+  serviceModal.style.display = 'none';
+}
+
+// Close service modal when clicking outside
+window.addEventListener('click', (e) => {
+  const serviceModal = document.getElementById('serviceModal');
+  if (e.target === serviceModal) {
+    closeServiceModal();
+  }
+});
+
+// Close service modal with Escape key
+window.addEventListener('keydown', (e) => {
+  const serviceModal = document.getElementById('serviceModal');
+  if (e.key === 'Escape' && serviceModal.style.display === 'flex') {
+    closeServiceModal();
+  }
+});
+
 // Initialize with signup form
 document.addEventListener('DOMContentLoaded', () => {
   // Set default form
