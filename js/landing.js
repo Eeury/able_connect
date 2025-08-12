@@ -52,9 +52,17 @@ function showForm(type) {
     setupPasswordValidation();
   } else {
     formContainer.innerHTML = `
+      <div class="slider-switch">
+        <button class="active" onclick="switchForm('pwd')">PWD</button>
+        <button onclick="switchForm('client')">Client</button>
+      </div>
       <form id="loginForm" onsubmit="handleLogin(event)">
         <input type="email" placeholder="Email Address" required />
         <input type="password" placeholder="Password" required />
+        <div class="radio-options" id="loginUserTypeOptions">
+          <label><input type="radio" name="loginUserType" value="pwd" checked> PWD</label>
+          <label><input type="radio" name="loginUserType" value="client"> Client</label>
+        </div>
         <button type="submit">Login</button>
         <a href="#" onclick="showForm('signup')">Don't have an account? Sign Up</a>
       </form>
@@ -68,9 +76,12 @@ function switchForm(userType) {
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
   
-  // Update radio button selection
-  const radio = document.querySelector(`input[value="${userType}"]`);
-  if (radio) radio.checked = true;
+  // Update radio button selection for both signup and login forms
+  const signupRadio = document.querySelector(`input[name="userType"][value="${userType}"]`);
+  const loginRadio = document.querySelector(`input[name="loginUserType"][value="${userType}"]`);
+  
+  if (signupRadio) signupRadio.checked = true;
+  if (loginRadio) loginRadio.checked = true;
 }
 
 // Handle signup form submission
@@ -101,13 +112,19 @@ function handleLogin(event) {
   const form = event.target;
   const formData = new FormData(form);
   
-  // Simulate login process
-  console.log('Logging in...');
+  // Get user type from radio selection
+  const userType = form.querySelector('input[name="loginUserType"]:checked').value;
   
-  // For demo purposes, redirect to PWD homepage
-  // In real app, check user type from backend
+  // Simulate login process
+  console.log('Logging in as:', userType);
+  
+  // Redirect based on user type
   setTimeout(() => {
-    window.location.href = '/homepage.html';
+    if (userType === 'pwd') {
+      window.location.href = '/homepage.html';
+    } else {
+      window.location.href = '/client.html';
+    }
   }, 1000);
 }
 

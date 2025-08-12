@@ -1,4 +1,4 @@
-/* Reset & base */
+lets make few changes, only change what I request/* Reset & base */
 body, html {
   margin: 0;
   padding: 0;
@@ -71,7 +71,6 @@ body, html {
 
 /* Hero */
 #hero {
-  background: linear-gradient(135deg, #00450d 0%, #001F1F 100%);
   height: 90vh;
   color: white;
   display: flex;
