@@ -190,7 +190,7 @@ function setupPasswordValidation() {
     document.getElementById('uppercase').className = /[A-Z]/.test(value) ? 'valid' : 'invalid';
     document.getElementById('lowercase').className = /[a-z]/.test(value) ? 'valid' : 'invalid';
     document.getElementById('number').className = /\d/.test(value) ? 'valid' : 'invalid';
-    document.getElementById('special').className = /[!@#$%^&*(),.?":{}|<>]/.test(value) ? 'valid' : 'invalid';
+    document.getElementById('special').className = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(value) ? 'valid' : 'invalid';
   });
 }
 
@@ -207,7 +207,7 @@ function setupClientPasswordValidation() {
     document.getElementById('clientUppercase').className = /[A-Z]/.test(value) ? 'valid' : 'invalid';
     document.getElementById('clientLowercase').className = /[a-z]/.test(value) ? 'valid' : 'invalid';
     document.getElementById('clientNumber').className = /\d/.test(value) ? 'valid' : 'invalid';
-    document.getElementById('clientSpecial').className = /[!@#$%^&*(),.?":{}|<>]/.test(value) ? 'valid' : 'invalid';
+    document.getElementById('clientSpecial').className = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(value) ? 'valid' : 'invalid';
   });
 }
 

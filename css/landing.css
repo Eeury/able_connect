@@ -368,7 +368,8 @@ footer {
 }
 
 .radio-options input[type="radio"]:checked + label {
-  background-color: #e0f7f7;
+  background-color: #00450d;
+  color: white;
   border-color: #003308;
   transform: scale(1.02);
   box-shadow: 0 2px 8px rgba(0, 69, 13, 0.2);
@@ -377,6 +378,19 @@ footer {
 .radio-options label:hover {
   background-color: #f8f8f8;
   transform: translateY(-1px);
+}
+
+/* Ensure radio buttons are properly clickable */
+.radio-options input[type="radio"] {
+  display: none;
+}
+
+.radio-options label {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Password Requirements Checklist */
