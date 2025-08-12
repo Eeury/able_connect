@@ -371,6 +371,12 @@ footer {
   background-color: #e0f7f7;
   border-color: #003308;
   transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 69, 13, 0.2);
+}
+
+.radio-options label:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-1px);
 }
 
 /* Password Requirements Checklist */

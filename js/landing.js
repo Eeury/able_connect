@@ -106,6 +106,11 @@ function switchForm(userType) {
     } else {
       pwdFields.style.display = 'none';
       clientFields.style.display = 'block';
+      // Ensure a client type is selected when switching to client
+      const clientTypeRadio = document.querySelector('input[name="clientType"]:checked');
+      if (!clientTypeRadio) {
+        document.querySelector('input[name="clientType"][value="gig"]').checked = true;
+      }
     }
   }
   
@@ -124,15 +129,21 @@ function handleSignup(event) {
   const activeButton = document.querySelector('.slider-switch button.active');
   const userType = activeButton ? activeButton.textContent.toLowerCase() : 'pwd';
   
-  // Get client type if signing up as client
-  let clientType = null;
+  // Validate client type selection if signing up as client
   if (userType === 'client') {
     const clientTypeRadio = form.querySelector('input[name="clientType"]:checked');
-    clientType = clientTypeRadio ? clientTypeRadio.value : 'gig';
+    if (!clientTypeRadio) {
+      alert('Please select either Gig or Service before signing up as a Client.');
+      return;
+    }
+    const clientType = clientTypeRadio.value;
+    console.log('Signing up as:', userType, `(${clientType})`);
+  } else {
+    console.log('Signing up as:', userType);
   }
   
   // Simulate signup process
-  console.log('Signing up as:', userType, clientType ? `(${clientType})` : '');
+  console.log('Processing signup...');
   
   // Redirect based on user type
   setTimeout(() => {
