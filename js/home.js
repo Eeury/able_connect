@@ -68,6 +68,15 @@ const availableServices = [
     duration: '1 hour',
     therapist: 'Dr. Emily Brown',
     location: 'Kilimani'
+  },
+  {
+    id: 4,
+    title: 'Sign Language Interpretation',
+    description: 'Professional sign language interpretation for events, meetings, and personal needs.',
+    price: 3500,
+    duration: 'Per session',
+    therapist: 'Certified Interpreter',
+    location: 'Available Nationwide'
   }
 ];
 
