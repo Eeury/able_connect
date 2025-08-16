@@ -271,15 +271,12 @@ body, html {
 .service-modal .service-image {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 12px;
   margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 4rem;
-  border: 2px dashed #ccc;
+  border: 2px solid #ccc;
 }
 
 .service-modal p {

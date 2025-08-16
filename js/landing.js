@@ -235,10 +235,8 @@ function showServiceDescription(serviceType) {
   switch(serviceType) {
     case 'freelance':
       content = `
-        <h2>🎯 Freelance Gigs</h2>
-        <div class="service-image">
-          <span>🎯</span>
-        </div>
+        <h2>Freelance Gigs</h2>
+        <div class="service-image" style="background-image: url('/images/freelancegigs.jpg')"></div>
         <p>Connect with opportunities that match your unique skills and abilities. Our freelance platform is designed to be accessible and inclusive for everyone.</p>
         <div class="service-features">
           <h4>What we offer:</h4>
@@ -257,10 +255,8 @@ function showServiceDescription(serviceType) {
       
     case 'medical':
       content = `
-        <h2>🏥 Medical Services</h2>
-        <div class="service-image">
-          <span>🏥</span>
-        </div>
+        <h2>Medical Services</h2>
+        <div class="service-image" style="background-image: url('/images/medicalservices.jpg')"></div>
         <p>Access comprehensive medical and therapy services through our network of healthcare providers who understand and accommodate diverse abilities.</p>
         <div class="service-features">
           <h4>Available services:</h4>
@@ -279,10 +275,8 @@ function showServiceDescription(serviceType) {
       
     case 'inclusive':
       content = `
-        <h2>💼 Inclusive Work</h2>
-        <div class="service-image">
-          <span>💼</span>
-        </div>
+        <h2>Inclusive Work</h2>
+        <div class="service-image" style="background-image: url('/images/inclusivework.jpg')"></div>
         <p>Connect with employers who are committed to creating truly inclusive work environments that celebrate diversity and provide necessary accommodations.</p>
         <div class="service-features">
           <h4>Workplace features:</h4>
@@ -300,10 +294,8 @@ function showServiceDescription(serviceType) {
       break;
     case 'signlanguage':
       content = `
-        <h2>👐 Sign Language Interpretation</h2>
-        <div class="service-image">
-          <span>👐</span>
-        </div>
+        <h2>Sign Language Interpretation</h2>
+        <div class="service-image" style="background-image: url('/images/signlanguage.jpg')"></div>
         <p>Our certified interpreters provide professional sign language interpretation for events, meetings, and personal needs, ensuring clear and inclusive communication for all participants.</p>
         <div class="service-features">
           <h4>Service highlights:</h4>
