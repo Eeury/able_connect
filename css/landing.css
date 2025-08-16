@@ -189,6 +189,52 @@ body, html {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.service-item:hover::before {
+  opacity: 0.15;
+}
+
+.service-item > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Freelance Gigs background */
+.service-item:nth-child(1)::before {
+  background-image: url('/images/freelancegigs.jpg');
+}
+
+/* Medical Services background */
+.service-item:nth-child(2)::before {
+  background-image: url('/images/medicalservices.jpg');
+}
+
+/* Inclusive Work background */
+.service-item:nth-child(3)::before {
+  background-image: url('/images/inclusivework.jpg');
+}
+
+/* Sign Language Interpretation background */
+.service-item:nth-child(4)::before {
+  background-image: url('/images/signlanguage.jpg');
 }
 
 .service-item:hover {
