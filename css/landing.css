@@ -269,8 +269,8 @@ body, html {
 }
 
 .service-modal .service-image {
-  width: 200px;
-  height: 200px;
+  width: calc(100% - 2rem);
+  height: 250px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
