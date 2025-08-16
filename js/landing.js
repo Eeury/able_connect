@@ -298,6 +298,26 @@ function showServiceDescription(serviceType) {
         <p>Find employers who value your skills and are committed to creating workplaces where everyone can thrive and succeed.</p>
       `;
       break;
+    case 'signlanguage':
+      content = `
+        <h2>👐 Sign Language Interpretation</h2>
+        <div class="service-image">
+          <span>👐</span>
+        </div>
+        <p>Our certified interpreters provide professional sign language interpretation for events, meetings, and personal needs, ensuring clear and inclusive communication for all participants.</p>
+        <div class="service-features">
+          <h4>Service highlights:</h4>
+          <ul>
+            <li>Available for in-person and virtual events</li>
+            <li>Certified and experienced interpreters</li>
+            <li>Flexible scheduling</li>
+            <li>Confidential and respectful service</li>
+            <li>Support for a variety of sign languages</li>
+          </ul>
+        </div>
+        <p>Contact us to book a session or learn more about our interpretation services.</p>
+      `;
+      break;
   }
   
   serviceDescription.innerHTML = content;
