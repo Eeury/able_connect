@@ -90,7 +90,7 @@ body, html {
   right: 0;
   bottom: 0;
   background: url('/images/hero.jpg') no-repeat center center/cover;
-  opacity: 0.3;
+  opacity: 0.7;
   z-index: 1;
 }
 
@@ -189,52 +189,6 @@ body, html {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.1;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.service-item:hover::before {
-  opacity: 0.15;
-}
-
-.service-item > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Freelance Gigs background */
-.service-item:nth-child(1)::before {
-  background-image: url('/images/freelancegigs.jpg');
-}
-
-/* Medical Services background */
-.service-item:nth-child(2)::before {
-  background-image: url('/images/medicalservices.jpg');
-}
-
-/* Inclusive Work background */
-.service-item:nth-child(3)::before {
-  background-image: url('/images/inclusivework.jpg');
-}
-
-/* Sign Language Interpretation background */
-.service-item:nth-child(4)::before {
-  background-image: url('/images/signlanguage.jpg');
 }
 
 .service-item:hover {
@@ -255,7 +209,9 @@ body, html {
 .service-image-placeholder {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 12px;
   margin: 0 auto 1.5rem;
   display: flex;
@@ -263,14 +219,33 @@ body, html {
   justify-content: center;
   color: #666;
   font-size: 3rem;
-  border: 2px dashed #ccc;
+  border: 2px solid #ccc;
   transition: all 0.3s ease;
 }
 
 .service-item:hover .service-image-placeholder {
   transform: scale(1.05);
   border-color: #00450d;
-  background: linear-gradient(135deg, #e0f7f7 0%, #d0f0f0 100%);
+}
+
+/* Freelance Gigs image */
+.service-item:nth-child(1) .service-image-placeholder {
+  background-image: url('/images/freelancegigs.jpg');
+}
+
+/* Medical Services image */
+.service-item:nth-child(2) .service-image-placeholder {
+  background-image: url('/images/medicalservices.jpg');
+}
+
+/* Inclusive Work image */
+.service-item:nth-child(3) .service-image-placeholder {
+  background-image: url('/images/inclusivework.jpg');
+}
+
+/* Sign Language Interpretation image */
+.service-item:nth-child(4) .service-image-placeholder {
+  background-image: url('/images/signlanguage.jpg');
 }
 
 /* Service Modal Styling */
