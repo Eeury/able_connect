@@ -1,0 +1,967 @@
+lets make few changes, only change what I request/* Reset & base */
+html {
+  height: 100%;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: #001F1F;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  height: 80px;
+  margin-right: 15px;
+}
+
+.platform-name {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #d1fae5;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.auth-buttons button {
+  background-color: #00450d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.auth-buttons button:hover {
+  background-color: #003308;
+}
+
+/* Hero */
+#hero {
+  height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/static/images/hero.jpg') no-repeat center center/cover;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.hero-slogan {
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+  font-style: italic;
+  color: #d1fae5;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button, .secondary-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.cta-button {
+  background-color: #ffffff;
+  color: #00450d;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondary-button:hover {
+  background-color: white;
+  color: #00450d;
+  transform: translateY(-2px);
+}
+
+/* About Section */
+#about {
+  background-color: #002D2D;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Services Section */
+#services {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-item {
+  background: white;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item h3 {
+  color: #001F1F;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.service-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 3rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.service-item:hover .service-image-placeholder {
+  transform: scale(1.02);
+}
+
+/* Sign Language Interpretation image */
+.service-item:nth-child(1) .service-image-placeholder {
+  background-image: url('/static/images/signlanguage.jpg');
+}
+
+/* PWD Connect image */
+.service-item:nth-child(2) .service-image-placeholder {
+  background-image: url('/static/images/pwdconnect.jpg');
+}
+
+/* Freelance Gigs image */
+.service-item:nth-child(3) .service-image-placeholder {
+  background-image: url('/static/images/freelancegigs.jpg');
+}
+
+/* Medical Services image */
+.service-item:nth-child(4) .service-image-placeholder {
+  background-image: url('/static/images/medicalservices.jpg');
+}
+
+/* Inclusive Work image */
+.service-item:nth-child(5) .service-image-placeholder {
+  background-image: url('/static/images/inclusivework.jpg');
+}
+
+/* Service Modal Styling */
+.service-modal {
+  max-width: 600px;
+  text-align: left;
+  background: white !important;
+  border: 1px solid #e0e0e0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #333 !important;
+}
+
+.service-modal h2 {
+  color: #001F1F;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.service-modal .service-image {
+  width: calc(100% - 2rem);
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin: 0 auto 1.5rem;
+  border: 2px solid #ccc;
+  display: block;
+}
+
+.service-modal p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-modal .service-features {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.service-modal .service-features h4 {
+  color: #001F1F;
+  margin-bottom: 0.5rem;
+}
+
+.service-modal .service-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-modal .service-features li {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.service-modal .service-features li::before {
+  content: '✓';
+  color: #00450d;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.service-action-button {
+  width: 100%;
+  padding: 12px 24px;
+  background: #00450d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.service-action-button:hover {
+  background: #003308;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background-color: #001F1F;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0 0 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Auth Modal Styling */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  width: 360px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 25px;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: pop 0.25s ease-out;
+}
+
+.modal-content.signup-modal {
+  width: 380px;
+}
+
+@keyframes pop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.slider-switch {
+  display: flex;
+  background: rgba(255,255,255,0.18);
+  padding: 4px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.slider-switch button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.slider-switch button.active {
+  background: #00450d;
+  color: white;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #d1fae5;
+}
+
+.service-modal .close {
+  color: #333;
+}
+
+.service-modal .close:hover {
+  color: #00450d;
+}
+
+/* Auth form styles */
+.modal-content form input,
+.modal-content form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-content form input::placeholder {
+  color: #eee;
+}
+
+.modal-content form select {
+  color: white;
+  appearance: none;
+  background: rgba(255,255,255,0.2) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.75rem center;
+}
+
+.modal-content form select option {
+  color: #333;
+  background: white;
+}
+
+.modal-content form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #00450d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+  background: #003308;
+}
+
+.modal-content form a {
+  color: #d1fae5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  text-align: center;
+  margin-top: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.modal-content form a:hover {
+  color: white;
+}
+
+/* Radio Options */
+.radio-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.radio-options label {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.18);
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: white;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.radio-options input[type="radio"] {
+  display: none;
+}
+
+.radio-options input[type="radio"]:checked + label,
+.radio-options label.active {
+  background: #00450d;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.radio-options label:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Password Requirements Checklist */
+.password-requirements {
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.password-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0;
+}
+
+.password-requirements li.valid {
+  color: #86efac;
+}
+
+.password-requirements li.valid::before {
+  content: '•';
+  color: #86efac;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.password-requirements li.invalid {
+  color: #fca5a5;
+}
+
+.password-requirements li.invalid::before {
+  content: '•';
+  color: #fca5a5;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* Password Strength Display */
+.strength {
+  font-size: 13px;
+  margin-top: 4px;
+  color: white;
+}
+
+.strength .good {
+  color: #86efac;
+}
+
+.strength .bad {
+  color: #fca5a5;
+}
+
+/* About Section Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+}
+
+.about-image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 2rem;
+  border: 2px dashed #ccc;
+}
+
+.about-item h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.about-item p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .platform-name {
+    font-size: 1.6rem;
+  }
+  
+  .nav-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .auth-buttons button {
+    min-width: 100px;
+    padding: 10px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-slogan {
+    font-size: 1.2rem;
+  }
+  
+  #hero h2 {
+    font-size: 2rem;
+  }
+  
+  #hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-content {
+    padding: 30px 20px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button, .secondary-button {
+    width: 200px;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .about-item {
+    padding: 1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-image-placeholder {
+    height: 150px;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95vw;
+    max-width: 350px;
+    max-height: 80vh;
+    padding: 1rem;
+  }
+  
+  .modal-content.signup-modal {
+    max-width: 360px;
+  }
+  
+  .modal-content form input,
+  .modal-content form select {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .modal-content form button[type="submit"] {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .slider-switch {
+    margin-bottom: 15px;
+  }
+  
+  .slider-switch button {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .radio-options {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .radio-options label {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .password-requirements {
+    font-size: 0.8rem;
+  }
+  
+  .header {
+    padding: 15px 15px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .platform-name {
+    font-size: 1.4rem;
+  }
+  
+  .nav a {
+    font-size: 0.9rem;
+    gap: 4px;
+  }
+  
+  .nav-icon {
+    font-size: 1rem;
+  }
+  
+  .auth-buttons button {
+    min-width: 80px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-slogan {
+    font-size: 1rem;
+  }
+  
+  #hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content {
+    padding: 25px 15px;
+  }
+  
+  .cta-button, .secondary-button {
+    width: 180px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    height: 45px;
+  }
+  
+  .platform-name {
+    font-size: 1.3rem;
+  }
+  
+  .nav a {
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+  
+  .nav-icon {
+    font-size: 0.9rem;
+  }
+  
+  .auth-buttons button {
+    min-width: 70px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-slogan {
+    font-size: 0.9rem;
+  }
+  
+  #hero h2 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-content {
+    padding: 20px 15px;
+  }
+  
+  .cta-button, .secondary-button {
+    width: 160px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .about-image-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}
